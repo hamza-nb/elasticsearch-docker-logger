@@ -17,6 +17,24 @@ const connection = async () => {
   return client;
 };
 
+const generateRandomString = (length) => {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+};
+
+const getRandomValueFromArray = (array) => {
+  // Generate a random index within the range of the array's length
+  var randomIndex = Math.floor(Math.random() * array.length);
+  // Return the element at the random index
+  return array[randomIndex];
+};
+
 const main = async () => {
   await connection();
   const apps = ["CMI", "CRM", "DATAFAS", "MARAQI"];
@@ -43,23 +61,7 @@ const main = async () => {
   // return client;
 };
 
-generateRandomString = (length) => {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
 
-getRandomValueFromArray = (array) => {
-  // Generate a random index within the range of the array's length
-  var randomIndex = Math.floor(Math.random() * array.length);
-  // Return the element at the random index
-  return array[randomIndex];
-};
 
 main();
 
