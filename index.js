@@ -14,7 +14,53 @@ const connection = async () => {
       console.log(error.message);
     }
   }
-
   return client;
 };
+
+const main = async () => {
+  await connection();
+  const apps = ["CMI", "CRM", "DATAFAS", "MARAQI"];
+  setInterval(async () => {
+    try {
+      await client.index({
+        index: "pm2_logs",
+        body: {
+          app: getRandomValueFromArray(apps),
+          log: generateRandomString(30),
+          date: new Date(),
+        },
+      });
+      //   console.log({
+      //     app: getRandomValueFromArray(apps),
+      //     log: generateRandomString(30),
+      //     date: new Date(),
+      //   });
+    } catch (error) {
+      console.log("error while inserting new row");
+    }
+  }, 1000);
+
+  // return client;
+};
+
+generateRandomString = (length) => {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+};
+
+getRandomValueFromArray = (array) => {
+  // Generate a random index within the range of the array's length
+  var randomIndex = Math.floor(Math.random() * array.length);
+  // Return the element at the random index
+  return array[randomIndex];
+};
+
+main();
+
 
