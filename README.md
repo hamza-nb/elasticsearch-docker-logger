@@ -1,6 +1,6 @@
 # ElasticSearch - Kibana - Nodejs - Docker
 
-[![App Logo](logo_2.png)]
+![App Logo](logo_1.png)
 
 
 ### Features
