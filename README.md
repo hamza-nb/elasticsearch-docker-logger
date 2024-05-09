@@ -14,6 +14,11 @@
 ```sh
 docker compose up -d
 ```
+```sh
+Kibana Url: http://localhost:5601/
+```
+
+
 
 
 ## License
