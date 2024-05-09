@@ -1,6 +1,6 @@
 # ElasticSearch - Kibana - Nodejs - Docker
 
-[![App Platorm](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IFDTmaXjQATOpmBIcv_yXQ.png)](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IFDTmaXjQATOpmBIcv_yXQ.pngm)
+[![App Logo](logo_2.png)]
 
 
 ### Features
